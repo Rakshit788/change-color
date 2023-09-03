@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Change the baground color every second</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <script>
+        let startbtn = document.getElementById('start')
+        let stopbtn = document.getElementById('stop')
+        let intervalperiod ; 
+        function randomcolor(){
+            let values = "0123456789ABCDEF" ;
+            let hexvalue = "#" ;
+          
+            for(i=0 ; i<6 ; i++){
+                hexvalue += values[Math.floor(Math.random()*16)]
+
+                
+            }                return  hexvalue  ;}
+           
+            const startChangecolor = function (){
+              intervalperiod = setInterval(changeBgcColor ,200)
+                function changeBgcColor(){
+                    document.body.style.backgroundColor = randomcolor();
+                }
+
+             }  
+             const stopChangecolor = function (){
+                clearInterval(intervalperiod)
+             }
+
+             startbtn.addEventListener('click' , startChangecolor)
+             stopbtn.addEventListener('click' , stopChangecolor)
+      
+            
+
+    </script>
+</body>
+</html>
